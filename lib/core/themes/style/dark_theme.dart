@@ -5,10 +5,10 @@ class DarkTheme {
     return ThemeData(
       brightness: Brightness.dark,
       scaffoldBackgroundColor: const Color(0xff3A3A3A),
-      primaryColor: const Color(0xff3A3A3A),
+      primaryColor: Colors.white,
       colorScheme: const ColorScheme.dark(
-        primary: Color(0xff3A3A3A),
-        secondary: Color(0xff3A3A3A),
+        primary: Colors.white,
+        secondary: Colors.white,
         background: Color(0xff3A3A3A),
         surface: Color(0xff3A3A3A),
       ),
@@ -19,7 +19,7 @@ class DarkTheme {
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           foregroundColor: Colors.black,
-          backgroundColor: Colors.tealAccent,
+          backgroundColor: const Color.fromARGB(255, 2, 59, 42),
           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
         ),
       ),

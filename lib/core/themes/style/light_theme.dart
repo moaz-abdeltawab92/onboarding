@@ -5,10 +5,10 @@ class LightTheme {
     return ThemeData(
       brightness: Brightness.light,
       scaffoldBackgroundColor: Colors.white,
-      primaryColor: Colors.white,
+      primaryColor: const Color(0xff3A3A3A),
       colorScheme: const ColorScheme.light(
-        primary: Colors.white,
-        secondary: Colors.white,
+        primary: const Color(0xff3A3A3A),
+        secondary: const Color(0xff3A3A3A),
         background: Colors.white,
         surface: Colors.white,
       ),
@@ -19,7 +19,7 @@ class LightTheme {
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           foregroundColor: Colors.white,
-          backgroundColor: Colors.green,
+          backgroundColor: const Color.fromARGB(255, 20, 66, 52),
           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
         ),
       ),

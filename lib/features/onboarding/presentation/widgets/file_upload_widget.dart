@@ -1,4 +1,4 @@
-import '../../../../core/import.dart';
+import '../../../../core/routing/route_export.dart';
 import 'package:onboarding_2/l10n/localizations_extension.dart';
 
 class FileUploadWidget extends StatelessWidget {

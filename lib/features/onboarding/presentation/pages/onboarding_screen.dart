@@ -1,3 +1,12 @@
+// ---------------------------------------------------------------------------
+// File: onboarding_screen.dart
+// Description: Displays a multi-page onboarding experience using PageView,
+//              smooth indicators, and custom buttons.
+// Project: Onboarding App
+// Author: Ehdaa
+// Date: August 2025
+// ---------------------------------------------------------------------------
+
 import 'package:flutter/material.dart';
 import 'package:onboarding_2/core/constants/app_assets.dart';
 import 'package:onboarding_2/core/themes/color/app_colors.dart';
@@ -45,7 +54,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     ];
 
     return Scaffold(
-      backgroundColor: AppColors.backgroundColor,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -66,11 +75,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         verticalSpace(size.height * 0.068),
                         Text(
                           onboardingPages[index]["title"]!,
-                          style:
-                              Theme.of(context).textTheme.titleMedium?.copyWith(
-                                    color: AppColors.titleColor,
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                          style: Theme.of(context)
+                              .textTheme
+                              .headlineSmall
+                              ?.copyWith(
+                                color: Theme.of(context).colorScheme.primary,
+                                fontWeight: FontWeight.bold,
+                              ),
                           textAlign: TextAlign.center,
                         ),
                         verticalSpace(10),
@@ -78,11 +89,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           onboardingPages[index]["subtitle"]!,
                           style: Theme.of(context)
                               .textTheme
-                              .titleSmall
-                              ?.copyWith(color: AppColors.subtitleColor),
+                              .bodyMedium
+                              ?.copyWith(
+                                  color:
+                                      Theme.of(context).colorScheme.secondary),
                           textAlign: TextAlign.center,
                         ),
-                        verticalSpace(size.height * 0.03),
+                        verticalSpace(size.height * 0.05),
                         Image.asset(
                           onboardingPages[index]["image"]!,
                           height: size.height * 0.45,
@@ -97,7 +110,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               SmoothPageIndicator(
                 controller: _pageController,
                 count: onboardingPages.length,
-                effect: const ExpandingDotsEffect(
+                effect: ExpandingDotsEffect(
                   activeDotColor: AppColors.primaryColor,
                   dotColor: AppColors.dotInactiveColor,
                   dotHeight: 8,
@@ -133,7 +146,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       },
                       child: Text(
                         context.loc.button_skip,
-                        style: const TextStyle(color: AppColors.subtitleColor),
+                        style: TextStyle(color: AppColors.subtitleColor),
                       ),
                     ),
                 ],
