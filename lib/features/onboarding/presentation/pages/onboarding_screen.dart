@@ -98,7 +98,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         verticalSpace(size.height * 0.05),
                         Image.asset(
                           onboardingPages[index]["image"]!,
-                          height: size.height * 0.45,
+                          height: size.height * 0.3,
                         ),
                       ],
                     );
@@ -110,8 +110,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               SmoothPageIndicator(
                 controller: _pageController,
                 count: onboardingPages.length,
-                effect: ExpandingDotsEffect(
-                  activeDotColor: AppColors.primaryColor,
+                effect: const ExpandingDotsEffect(
+                  activeDotColor: AppColors.customButton,
                   dotColor: AppColors.dotInactiveColor,
                   dotHeight: 8,
                   dotWidth: 8,
@@ -146,7 +146,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       },
                       child: Text(
                         context.loc.button_skip,
-                        style: TextStyle(color: AppColors.subtitleColor),
+                        style:
+                            const TextStyle(color: AppColors.dotInactiveColor),
                       ),
                     ),
                 ],
